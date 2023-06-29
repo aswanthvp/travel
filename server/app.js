@@ -18,4 +18,11 @@ app.get("/", (request, response, next) => {
   next();
 });
 
+app.get("/ping",(request, response, next)=>{
+    response.json({status:"ok"});
+    next();
+})
+
+
+
 module.exports = app;
