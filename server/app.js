@@ -17,7 +17,6 @@ app.use(express.json());
 app.use(express.static("Build"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const publicPath = path.join(__dirname, "../build");
 
 app.get("/trips",(request, response, next)=>{
 })
@@ -45,7 +44,7 @@ app.get("*",(request, response)=>{
         //   console.log(file);
         // });
       });
-    response.sendFile(path.join(publicPath,"index.html"))
+    response.sendFile("../buuild/index.html")
 });
 
 
