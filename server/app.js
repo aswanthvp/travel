@@ -35,11 +35,8 @@ app.post("/login",(request, response, next)=>{
 })
 
 app.get("*",(request, response)=>{
-    console.log(__dirname)
-    console.log(path.join(__dirname, "build", "index.html"));
-    console.log(path.join(__dirname, "../build", "index.html"));
 
-    response.sendFile("../build/index.html")
+    response.sendFile(path.join(__dirname, "../build", "index.html"))
 });
 
 
