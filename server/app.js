@@ -44,7 +44,7 @@ app.get("*",(request, response)=>{
         //   console.log(file);
         // });
       });
-    response.sendFile("../buuild/index.html")
+    response.sendFile("../build/index.html")
 });
 
 
