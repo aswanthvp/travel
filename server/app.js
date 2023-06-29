@@ -40,9 +40,10 @@ app.get("*",(request, response)=>{
     // console.log(path.join(publicPath, "index.html"));
 
     fs.readdir(publicPath, (err, files) => {
-        files.forEach(file => {
-          console.log(file);
-        });
+        console.log(files);
+        // files.forEach(file => {
+        //   console.log(file);
+        // });
       });
     response.sendFile(path.join(publicPath,"index.html"))
 });
