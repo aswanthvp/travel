@@ -35,15 +35,10 @@ app.post("/login",(request, response, next)=>{
 })
 
 app.get("*",(request, response)=>{
-    // console.log(__dirname)
-    // console.log(path.join(publicPath, "index.html"));
+    console.log(__dirname)
+    console.log(path.join(__dirname, "build", "index.html"));
+    console.log(path.join(__dirname, "../build", "index.html"));
 
-    fs.readdir(__dirname, (err, files) => {
-        console.log(files);
-        // files.forEach(file => {
-        //   console.log(file);
-        // });
-      });
     response.sendFile("../build/index.html")
 });
 
