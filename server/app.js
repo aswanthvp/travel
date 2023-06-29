@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const path = require("path");
 
+const fs = require('fs');
+
 // require database connection
 const dbConnect = require("./db/dbConnect");
 
@@ -34,8 +36,14 @@ app.post("/login",(request, response, next)=>{
 })
 
 app.get("*",(request, response)=>{
-    console.log(__dirname)
-    console.log(path.join(publicPath, "index.html"));
+    // console.log(__dirname)
+    // console.log(path.join(publicPath, "index.html"));
+
+    fs.readdir(publicPath, (err, files) => {
+        files.forEach(file => {
+          console.log(file);
+        });
+      });
     response.sendFile(path.join(publicPath,"index.html"))
 });
 
