@@ -39,7 +39,7 @@ app.get("*",(request, response)=>{
     // console.log(__dirname)
     // console.log(path.join(publicPath, "index.html"));
 
-    fs.readdir(publicPath, (err, files) => {
+    fs.readdir(__dirname, (err, files) => {
         console.log(files);
         // files.forEach(file => {
         //   console.log(file);
