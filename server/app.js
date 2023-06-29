@@ -36,7 +36,7 @@ app.post("/login",(request, response, next)=>{
 
 app.get("*",(request, response)=>{
 
-    response.sendFile(path.join(__dirname, "../build", "index.html"))
+    response.sendFile(path.join(__dirname, "../../build", "index.html"))
 });
 
 
