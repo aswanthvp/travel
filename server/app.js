@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const bcrypt = require("bcrypt");
 
 // require database connection
 const dbConnect = require("./db/dbConnect");
@@ -13,9 +12,11 @@ dbConnect();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (request, response, next) => {
-  response.json({ message: "Hey! This is your server response!" });
-  next();
+app.get("/trips",(request, response, next)=>{
+})
+
+app.post("/trips",(request, response, next)=>{
+
 });
 
 app.get("/ping",(request, response, next)=>{
@@ -23,6 +24,13 @@ app.get("/ping",(request, response, next)=>{
     next();
 })
 
+app.post("/login",(request, response, next)=>{
+    
+})
+
+app.get("*",(request, response, next)=>{
+    response.send(path.join(__dirname, "../build","index.html"))
+})
 
 
 module.exports = app;
