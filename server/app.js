@@ -34,6 +34,7 @@ app.post("/login",(request, response, next)=>{
 })
 
 app.get("*",(request, response)=>{
+    console.log(__dirname)
     console.log(path.join(publicPath, "index.html"));
     response.sendFile(path.join(publicPath,"index.html"))
 });
