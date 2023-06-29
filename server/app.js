@@ -1,9 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const path = require("path");
 
-const fs = require('fs');
 
 // require database connection
 const dbConnect = require("./db/dbConnect");
@@ -34,10 +32,6 @@ app.post("/login",(request, response, next)=>{
     
 })
 
-app.get("*",(request, response)=>{
-console.log(path.join(__dirname, "../build", "index.html"));
-    response.sendFile(path.join(__dirname, "../build", "index.html"))
-});
 
 
 module.exports = app;
