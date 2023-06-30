@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const bodyParser = require("body-parser");
 
 // require database connection
@@ -16,6 +17,7 @@ dbConnect();
 // body parser configuration
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/trips", auth, async (request, response, next) => {
