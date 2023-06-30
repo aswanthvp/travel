@@ -20,10 +20,11 @@ const saveTrips = async (tripsInfo) => {
 
 const getTrips = async ({ page }) => {
   try {
-    var perPage = 10;
+    // pgination is not implemented here.
+    // just returning the first 300 results;
+    var perPage = 300;
     const results = Trips.find()
       .limit(perPage)
-      .skip(page * perPage);
     return results;
   } catch (error) {
     console.log("Error occurred");
